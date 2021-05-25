@@ -6,7 +6,7 @@ public class Plane {
 	String code;
 
 	public Plane(String name, double unitprice, String code) {
-		super();
+		
 		this.name = name;
 		this.unitprice = unitprice;
 		this.code = code;
