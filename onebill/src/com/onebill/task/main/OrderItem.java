@@ -9,41 +9,43 @@ import java.util.Map.Entry;
 import com.onebill.task.Plane;
 
 public class OrderItem {
-
-	HashMap<String, Plane> map = new HashMap<String, Plane>();
+HashMap<String, Plane> map = new HashMap<String, Plane>();
 
 	void add_map(String key, Plane obj) {
-		if (map.containsValue(key)) {
+		if (map.containsKey(key)) {
 
-			System.out.println("item alreday presenrt ");
+			System.out.println("ITEM ALREADY PRESENT........... ");
 		} else {
 			map.put(key, obj);
-			System.out.println(" item add sucefully");
+			System.out.println(" ITEM ADDED SUCEFULLY............");
 		}
 
 	}
 
 	void remove_map(String key) {
+		if (map.containsKey(key)) {
 
-		map.remove(key);
-		System.out.println("remove sucefully");
-		System.out.println("size map is" + map.size());
+			map.remove(key);
+			System.out.println("REMOVE SUCEFFULLY........");
+			System.out.println("size map is" + map.size());
+		} else {
+
+			System.out.println(" SORRY ITEM NOT PRESENT IN CART ");
+		}
 
 	}
 
 	void displayitem(String name) {
 
-		
-		if(map.containsKey(name)) {
+		if (map.containsKey(name)) {
 
 			Plane spe = map.get(name);
-			System.out.println(spe.getName());
-			System.out.println(spe.getUnitprice());
-			System.out.println(spe.getCode());
-		}else {
-			System.out.println(" value is not present");
+			System.out.println(name + "name is :" + spe.getName());
+			System.out.println("price" + spe.getUnitprice());
+			System.out.println("code" + spe.getCode());
+		} else {
+			System.out.println(" SORRY ITEM NOT PRESENT IN CART......");
 		}
-		
 
 	}
 
@@ -58,5 +60,6 @@ public class OrderItem {
 	void numbetofItem() {
 		System.out.println("number of item present in cart:" + map.size());
 	}
+
 
 }
