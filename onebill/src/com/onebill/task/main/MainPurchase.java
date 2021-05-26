@@ -11,8 +11,7 @@ import com.onebill.task.Plane;
 public class MainPurchase {
 	public static void main(String[] args) throws Handler {
 
-//		 System.out.println(list.contains(mobile1));
-		OrderItem ot = new OrderItem();
+                OrderItem ot = new OrderItem();
 		Scanner scan = new Scanner(System.in);
 		Plane plane1 = new Plane("sonymobile", 1200.00, "123sony");
 		Plane plane2 = new Plane("case", 130.00, "100cas");
@@ -25,7 +24,6 @@ public class MainPurchase {
 			System.out.println(" remove 2");
 			System.out.println(" display 3");
 			System.out.println(" display all 4");
-			System.out.println("number of item present 6");
 			System.out.println(" exite 5");
 
 			int n = scan.nextInt();
@@ -35,18 +33,21 @@ public class MainPurchase {
 				System.out.println(" Enter your added item name");
 
 				String name = scan.next();
-				
-				if (name == "mobile") {
+
+				if (name.equals("mobile")) {
 					ot.add_map(name, plane1);
 				}
-				if (name == "case") {
+				if (name.equals("case")) {
 					ot.add_map(name, plane2);
+				} else if (!(name.equals("mobile"))) {
+					System.out.println("These Item not present......");
 				}
 
 				break;
 			case 2:
 				System.out.println("enter remove item");
 				String remove = scan.next();
+
 				ot.remove_map(remove);
 				break;
 			case 3:
@@ -63,6 +64,7 @@ public class MainPurchase {
 				System.exit(0);
 			}
 		}
+		
 
 //		Scanner scan = new Scanner(System.in);
 //
